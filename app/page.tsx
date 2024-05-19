@@ -1,9 +1,14 @@
-import LoginPage from "./auth/login/page";
+"use client";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+
+
+  
+
   return (
-    <>
-        <LoginPage />
-    </>
+    <div className="p-4">
+      <h1 className="mt-4">Hello world</h1>
+    </div>
   );
 }

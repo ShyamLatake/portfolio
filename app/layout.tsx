@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={inter.className}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (userPrefersDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-white dark:bg-black min-h-screen">
+        <Navbar />
+        <div className="h-10/12">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
