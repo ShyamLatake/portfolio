@@ -40,12 +40,8 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center bg-transparent w-full h-14 px-4 mt-4 text-black dark:text-white">
-      <div>
-        <h1 className="text-5xl font-signature ml-2">
-          <a className="link-underline link-underline-black" href="" target="_blank" rel="noreferrer">
-            Shyam Latake
-          </a>
-        </h1>
+      <div className="bg-transparent">
+          Shyam Latake
       </div>
 
 
@@ -61,23 +57,34 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex justify-center items-center cursor-pointer rounded-full border-2 border-slate-800 dark:border-zinc-300"
-          onClick={() => setIsDarkMode(!isDarkMode)} >
-          <div className="m-1"><Image
+        <div
+      className="relative flex justify-center items-center cursor-pointer bg-black dark:bg-white rounded-lg  border border-slate-700 dark:border-zinc-300"
+      onClick={() => setIsDarkMode(!isDarkMode)}
+    >
+      {/* <div className="absolute rounded-full h-full w-6/12 bg-white right-px dark:bg-black dark:left-px  flex justify-center items-center"> </div> */}
+      {
+        isDarkMode ? (
+          <div className="m-1">
+        <Image
+            src="/images/sun.png"
+            width={15}
+            height={15}
+            alt="Sun icon"
+          /></div>
+        ):(
+          <div className="m-1">
+          <Image
             src="/images/moon.png"
             width={15}
             height={15}
-            alt="Picture of the author"
-          /></div>
-          <div className="m-1">
-            <Image
-              src="/images/sun.png"
-              width={15}
-              height={15}
-              alt="Picture of the author"
-            />
+            alt="Moon icon"
+          />
           </div>
-        </div>
+        )
+      }
+      
+          
+    </div>
       </div>
 
       <div
