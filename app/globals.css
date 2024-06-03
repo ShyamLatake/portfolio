@@ -16,11 +16,9 @@
   left:-40%;
   height: 100%;
   width: 100%;
-  background: #54abfb;
   opacity: 0.8;
-  /* border-radius: 50% 50% 0% 0% / 60% 60% 40% 40%; */
   border: 1px solid #3d93ff;
-  animation: wobble 2s ease-in-out  infinite alternate;
+  animation: wobble 4s ease-in-out  infinite alternate;
   transform: rotate(120deg);
 }
 
@@ -30,23 +28,21 @@
   right: -1rem;
   height: 100%;
   width: 100%;
-  background: #318cfe;
-  /* border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%; */
   box-shadow:  inset -2px 2px 8px #1b6cfb, inset 2px 6px 10px #1a74e5,
     inset 8px -10px 14px white, inset 10px -20px 24px #a8ceff;
-  animation: wobble 3s ease-in-out infinite alternate;
+  animation: wobble 4s ease-in-out infinite alternate;
 }
 
 
 @keyframes wobble {
   0% {
-    border-radius: 20% 25% 30% 30% / 30% 35% 40% 45%;
+    border-radius: 90% 25% 30% 80% ;
   }
   50% {
-    border-radius: 40% 45% 60% 75% / 30% 35% 45% 50%;
+    border-radius: 60% 45% 30% 75% ;
   }
   100% {
-    border-radius: 50% 55% 60% 65% / 70% 75% 80% 85%;
+    border-radius: 20% 90% 60% 80% ;
   }
 }
 
