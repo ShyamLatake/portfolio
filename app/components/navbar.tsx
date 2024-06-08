@@ -40,9 +40,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center bg-transparent w-full h-14 px-4 mt-4 text-black dark:text-white">
-      <div className="bg-transparent">
-          Shyam Latake
-      </div>
+      <div className="bg-transparent text-5xl italic subpixel-antialiased">
+            <Image src="/images/slogo.png" alt="Shyam Latake" width={400} height={100} className="" />
+       </div>
 
 
       <div className="flex justify-conten items-center">
@@ -50,7 +50,7 @@ const Navbar = () => {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="nav-links ease-in-out px-4 cursor-pointer capitalize font-medium dark:text-gray-500 hover:scale-105 hover:text-black dark:hover:text-white duration-200 hover:underline hover:underline-offset-8"
+              className="nav-links ease-in-out px-4 cursor-pointer capitalize font-medium dark:text-white hover:scale-105 hover:text-black  duration-200 hover:underline hover:underline-offset-8"
             >
               <Link href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</Link>
             </li>
