@@ -1,20 +1,12 @@
 import { Component } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
-
+import { FormAnimationsDirective } from '../../shared/directives/form-animate.directive';
+import { AnimateOnScrollDirective } from '../../shared/directives/scroll-reveal.directive';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [FormAnimationsDirective, AnimateOnScrollDirective],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
-  animations: [
-    trigger('slideIn', [
-      transition(':enter', [
-        style({ transform: 'translateX(-50px)', opacity: 0 }),
-        animate('500ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
-    ])
-  ]
+  styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 

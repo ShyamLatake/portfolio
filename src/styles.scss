@@ -81,184 +81,82 @@ section {
 }
 
 
-// /* Animation utilities */
-// .fade-in {
-//     opacity: 0;
-//     transform: translateY(30px);
-//     transition: all 0.8s ease;
-// }
-
-// .fade-in.animate {
-//     opacity: 1;
-//     transform: translateY(0);
-// }
-
-// .slide-in-left {
-//     opacity: 0;
-//     transform: translateX(-30px);
-//     transition: all 0.8s ease;
-// }
-
-// .slide-in-left.animate {
-//     opacity: 1;
-//     transform: translateX(0);
-// }
-
-// .slide-in-right {
-//     opacity: 0;
-//     transform: translateX(30px);
-//     transition: all 0.8s ease;
-// }
-
-// .slide-in-right.animate {
-//     opacity: 1;
-//     transform: translateX(0);
-// }
-
-
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        transition: left var(--transition-medium);
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(8px, -8px);
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .hero-text {
-        order: 2;
-    }
-
-    .hero-image {
-        order: 1;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .skills-categories {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content,
-    .timeline-item:nth-child(odd) .timeline-content {
-        margin-left: 60px;
-        margin-right: 0;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        text-align: left;
-    }
-
-    .timeline-marker {
-        left: 20px;
-    }
-
-    .timeline-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
+/* Animation utilities */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
+.fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .hero {
-        padding-top: 70px;
-    }
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;
+}
 
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-    }
+.slide-in-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-    .picture-placeholder {
-        font-size: 3rem;
-    }
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease;
+}
 
-    .section-title {
-        font-size: 2rem;
-    }
+.slide-in-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-    .hero-title {
-        font-size: 2rem;
-    }
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s ease;
+}
 
-    .tech-icons {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-    }
+/* Ripple effect */
+.btn, .filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 
-    .tech-icon {
-        padding: 1rem;
-    }
-
-    .tech-icon i {
-        font-size: 2rem;
-    }
+/* Custom cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s ease;
 }

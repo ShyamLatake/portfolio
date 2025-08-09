@@ -1,19 +1,43 @@
-import { Directive, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
-  selector: '[appScrollReveal]'
+  selector: '[appAnimateOnScroll]',
+   standalone: true
 })
-export class ScrollRevealDirective implements AfterViewInit {
-  constructor(private el: ElementRef) {}
+export class AnimateOnScrollDirective implements OnInit {
+  private observer!: IntersectionObserver;
 
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        this.el.nativeElement.classList.add('animate');
-        observer.unobserve(this.el.nativeElement);
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
+  ngOnInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.renderer.addClass(this.el.nativeElement, 'animate');
+          this.observer.unobserve(this.el.nativeElement); 
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
       }
-    }, { threshold: 0.1 });
-    
-    observer.observe(this.el.nativeElement);
+    );
+
+    this.observer.observe(this.el.nativeElement);
   }
 }

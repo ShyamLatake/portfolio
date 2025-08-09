@@ -1,11 +1,11 @@
 <section id="about" class="about">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" appAnimateOnScroll>
       <h2 class="section-title">About Me</h2>
       <p class="section-subtitle">Get to know me better</p>
     </div>
     <div class="about-content">
-      <div class="about-text">
+      <div class="about-text" appAnimateOnScroll>
         <div class="text-content">
           <h3>Passionate Developer & Problem Solver</h3>
           <p>
@@ -22,21 +22,21 @@
           </p>
           <div class="stats-grid">
             <div class="stat-item">
-              <div class="stat-number" data-target="50">0</div>
+              <div class="stat-number" [appCounter]="10">0</div>
               <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number" data-target="3">0</div>
+              <div class="stat-number" [appCounter]="2">0</div>
               <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number" data-target="25">0</div>
+              <div class="stat-number" [appCounter]="2">0</div>
               <div class="stat-label">Happy Clients</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="about-visual">
+      <div class="about-visual" appAnimateOnScroll>
         <div class="visual-container">
           <div class="code-snippet">
             <div class="code-header">
@@ -62,11 +62,11 @@
               <div class="code-line">
                 <span class="code-property">skills:</span>
                 <span class="code-bracket"> [ </span
-                ><span class="code-string">'React'</span
+                ><span class="code-string">'JavaScript'</span
                 ><span class="code-punctuation">, </span>
                 <span class="code-string">'Node.js'</span
                 ><span class="code-punctuation">,</span>
-                <span class="code-string">'Python'</span
+                <span class="code-string">'Angular'</span 
                 ><span class="code-bracket">]</span
                 ><span class="code-punctuation">,</span>
               </div>

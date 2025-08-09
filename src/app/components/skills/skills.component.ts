@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
-
-
+// Imported directive for scroll animations
+import { AnimateOnScrollDirective } from '../../shared/directives/scroll-reveal.directive';
+import { SkillBarDirective } from '../../shared/directives/skill-bar.directive';
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [],
+  imports: [AnimateOnScrollDirective, SkillBarDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
-  animations: [
-     trigger('fadeInUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-      ])
-    ])
-  ],
 })
 export class SkillsComponent {
 

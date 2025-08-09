@@ -1,21 +1,14 @@
 import { Component } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
 
+// Imported directive for scroll animations
+import { AnimateOnScrollDirective } from '../../shared/directives/scroll-reveal.directive';
+import { CounterDirective } from '../../shared/directives/counter.directive';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  // Importing the directive for scroll animations
+  imports: [AnimateOnScrollDirective, CounterDirective],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
-  animations: [
-      trigger('slideIn', [
-        transition(':enter', [
-          style({ transform: 'translateX(-50px)', opacity: 0 }),
-          animate('500ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
-        ])
-      ])
-    ]
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}
