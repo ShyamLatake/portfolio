@@ -3,6 +3,11 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-email-icon',
   standalone: true,
+  styles: [`
+    * {
+      display: flex;
+    }
+  `],
   template: `
     <svg 
       [attr.width]="size" 
@@ -35,7 +40,7 @@ import { Component, Input } from '@angular/core';
 })
 export class EmailIconComponent {
   @Input() color: string = '#000000';
-  @Input() hoverColor: string = '#ff0000';
+  @Input() hoverColor: string = '#fff';
   @Input() size: string = '24px';
 
   currentFill: string = this.color;
