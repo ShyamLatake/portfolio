@@ -152,3 +152,12 @@
     font-weight: 500;
     color: var(--text-secondary);
 }
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .skill-category h3{
+    text-align: center;
+  }
+}

@@ -152,3 +152,63 @@
 .code-property { color: #82aaff; }
 .code-string { color: #c3e88d; }
 .code-punctuation { color: #89ddff; }
+
+
+/* Tablets & below */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text,
+  .about-visual {
+    transform: none !important;
+    opacity: 1 !important;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .main-text{
+    text-align: justify;
+  }
+
+  .text-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .stat-item {
+    padding: 0.8rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .code-content {
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: left;
+  }
+}
