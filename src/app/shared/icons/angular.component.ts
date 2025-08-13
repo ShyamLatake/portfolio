@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-angular-icon',
+  selector: 'angular-icon',
   standalone: true,
   styles: [
     `
